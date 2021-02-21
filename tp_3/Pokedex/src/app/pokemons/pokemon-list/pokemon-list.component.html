@@ -1,0 +1,13 @@
+<mat-nav-list infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <form class="example-form">
+        <mat-form-field class="example-full-width" (input)="onSearch($event)">
+            <mat-label>Recherche un pokémon</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </form>
+    <li *ngFor=" let pokemon of pokemonList " (click)="onClick(pokemon.id) "><img class="sprite " src="assets/img/sprites/{{pokemon.id}}.png ">
+        <a>
+            {{ pokemon.id }}. {{ pokemon.name }}
+        </a>
+    </li>
+</mat-nav-list>

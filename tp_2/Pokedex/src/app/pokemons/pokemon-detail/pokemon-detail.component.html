@@ -1,0 +1,30 @@
+<mat-card class="pokemon-card">
+    <mat-grid-list *ngIf="pokemon.id" cols="2" rowHeight="48px">
+        <mat-grid-tile class="center" [colspan]="1" [rowspan]="3">
+            <img class="artwork" src="assets/img/official-artwork/{{ pokemon.id }}.png" />
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            {{ pokemon.name }}
+            <button mat-icon-button (click)="play(pokemon.id)"><mat-icon >play_circle_outline</mat-icon>
+                <audio src="assets/audio/{{ pokemon.id }}.mp3" autoplay></audio>
+            </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-chip-list>
+                <mat-chip *ngFor="let type of pokemon.types">{{ type }}</mat-chip>
+            </mat-chip-list>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1"> Taille : {{ pokemon.height }} m</mat-grid-tile>
+
+        <mat-grid-tile class="center" [colspan]="1" [rowspan]="1"> No. {{ pokemon.id }} </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1"> Poids : {{ pokemon.weight }} kg</mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="2">
+            {{ pokemon.description }}
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-chip button (click)="goBack()" routerLink="">Retour au Pokédex</mat-chip>

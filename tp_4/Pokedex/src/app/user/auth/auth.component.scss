@@ -1,0 +1,23 @@
+.container {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20pt;
+    min-width: 500px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.centre {
+    width: 100%;
+    padding-left: 33%;
+    position: relative;
+}
+
+.centre button {
+    width: 33%;
+}

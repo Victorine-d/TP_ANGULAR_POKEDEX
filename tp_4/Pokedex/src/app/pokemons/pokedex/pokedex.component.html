@@ -1,0 +1,8 @@
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened>
+        <app-pokemon-list (idPokemon)="onChangeSelectedPokemon($event)"></app-pokemon-list>
+    </mat-drawer>
+    <mat-drawer-content mode="side" opened>
+        <app-pokemon-detail [idPokemon]="idPokemon"></app-pokemon-detail>
+    </mat-drawer-content>
+</mat-drawer-container>
